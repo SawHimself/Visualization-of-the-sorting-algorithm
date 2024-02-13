@@ -1,0 +1,62 @@
+﻿<Window x:Class="MyFirstWindowsApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyFirstWindowsApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="850"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+
+    <Grid x:Name="grid1" Opacity="1" MouseLeftButtonDown="StartMoving">
+        <Border Background="#161821"
+                CornerRadius="20"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Canvas x:Name="DrawingField" Grid.Row="1"></Canvas>
+            <ComboBox x:Name="SortingAlgoritmsComboBox"
+                      Grid.Row="2" Width="174" Background="#2c4157" HorizontalAlignment="Left" Margin="401,14,0,14"
+                      SelectionChanged="sortComboBox_SelectedChanged"
+                      Style="{StaticResource ComboBoxStyle}">
+                <ComboBoxItem Style="{StaticResource ComboBoxItemStyle}">
+                    <StackPanel>
+                        <TextBlock FontSize="16">bubblesort</TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboBoxItemStyle}">
+                    <StackPanel>
+                        <TextBlock FontSize="16">Insertionsort</TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboBoxItemStyle}">
+                    <StackPanel>
+                        <TextBlock FontSize="16">Selectionsort</TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboBoxItemStyle}">
+                    <StackPanel>
+                        <TextBlock FontSize="16">MergeSort</TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem Style="{StaticResource ComboBoxItemStyle}">
+                    <StackPanel>
+                        <TextBlock FontSize="16">Quiksort</TextBlock>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+            <Button Grid.Row="2" Style="{StaticResource BtnStyle}" Click="Start_Sort" HorizontalAlignment="Left" Margin="602,0,0,0" Width="100" Height="42" 
+                    Content="Start" FontSize="18"/>
+            <Button Style="{StaticResource BtnStyle}" Width="30" Height="30" HorizontalAlignment="Left" Margin="792,0,0,0"
+                    Click="Exit">
+                <Image Source="images\close_icon.png" Width="12" Height="12" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
